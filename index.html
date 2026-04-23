@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ikhona Makaluza — Content Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --ink: #1A1A1A;
+    --warm: #C8A96E;
+    --soft: #E8E0D0;
+    --muted: #7A7060;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 60px 40px 40px;
+    border-bottom: 1px solid var(--soft);
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,169,110,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--warm);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3.8rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 480px;
+    line-height: 1.7;
+  }
+
+  .meta {
+    margin-top: 28px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .meta span {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .meta span::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--warm);
+  }
+
+  .grid-label {
+    padding: 32px 40px 16px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    border-bottom: 1px solid var(--soft);
+  }
+
+  .articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--soft);
+    border-bottom: 1px solid var(--soft);
+  }
+
+  .article-card {
+    background: var(--cream);
+    padding: 28px 32px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: background 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .article-card:hover {
+    background: #FDFAF4;
+  }
+
+  .article-card:hover .arrow {
+    transform: translate(3px, -3px);
+    color: var(--warm);
+  }
+
+  .tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--warm);
+    font-weight: 500;
+  }
+
+  .article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  .arrow {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: auto;
+    padding-top: 12px;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  footer {
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: gap;
+    gap: 16px;
+  }
+
+  footer p {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  footer a {
+    font-size: 12px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid var(--warm);
+    padding-bottom: 2px;
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 40px 24px 32px; }
+    .grid-label { padding: 24px 24px 14px; }
+    .article-card { padding: 22px 24px; }
+    footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Content Portfolio</p>
+  <h1>Ikhona<br>Makaluza</h1>
+  <p class="subtitle">Published content creator specialising in quizzes, personality pieces, and interactive editorial — crafting content that engages audiences at scale.</p>
+  <div class="meta">
+    <span>Bored Panda Contributor</span>
+    <span>Cape Town, South Africa</span>
+    <span>27 Published Pieces</span>
+  </div>
+</header>
+
+<p class="grid-label">Selected Works</p>
+
+<div class="articles">
+
+  <a class="article-card" href="https://www.boredpanda.com/science-general-knowledge-8/" target="_blank">
+    <span class="tag">Quiz · Science</span>
+    <span class="article-title">Science General Knowledge Quiz</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/advanced-english-words-quiz/" target="_blank">
+    <span class="tag">Quiz · Language</span>
+    <span class="article-title">Advanced English Words Quiz</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/general-knowledge-quiz-4/" target="_blank">
+    <span class="tag">Quiz · General Knowledge</span>
+    <span class="article-title">General Knowledge Quiz</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/are-you-smarter-than-an-11th-grader-quiz/" target="_blank">
+    <span class="tag">Quiz · Education</span>
+    <span class="article-title">Are You Smarter Than an 11th Grader?</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/art-general-knowledge-2-quiz/" target="_blank">
+    <span class="tag">Quiz · Art & Culture</span>
+    <span class="article-title">Art General Knowledge Quiz</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/80s-90s-tv-show-general-knowledge/" target="_blank">
+    <span class="tag">Quiz · Pop Culture</span>
+    <span class="article-title">80s & 90s TV Show General Knowledge</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/50-50-general-knowledge-quiz-6/" target="_blank">
+    <span class="tag">Quiz · General Knowledge</span>
+    <span class="article-title">50/50 General Knowledge Quiz</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/what-drives-you-in-life-personality-quiz/" target="_blank">
+    <span class="tag">Personality · Lifestyle</span>
+    <span class="article-title">What Drives You In Life?</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/uk-school-grammar-quiz/" target="_blank">
+    <span class="tag">Quiz · Language</span>
+    <span class="article-title">UK School Grammar Quiz</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/science-general-knowledge-quiz-5/" target="_blank">
+    <span class="tag">Quiz · Science</span>
+    <span class="article-title">Science General Knowledge Quiz Vol. 5</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/50-50-general-knowledge-quiz/" target="_blank">
+    <span class="tag">Quiz · General Knowledge</span>
+    <span class="article-title">50/50 General Knowledge Quiz (Original)</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/guess-album-from-cover-quiz/" target="_blank">
+    <span class="tag">Quiz · Music</span>
+    <span class="article-title">Guess the Album From Its Cover</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/are-you-black-cat-or-golden-retriever-quiz/" target="_blank">
+    <span class="tag">Personality · Trending</span>
+    <span class="article-title">Are You a Black Cat or Golden Retriever?</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/general-science-knowledge-4-quiz/" target="_blank">
+    <span class="tag">Quiz · Science</span>
+    <span class="article-title">General Science Knowledge Quiz Vol. 4</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/which-cognitive-bias-rules-your-life-quiz/" target="_blank">
+    <span class="tag">Personality · Psychology</span>
+    <span class="article-title">Which Cognitive Bias Rules Your Life?</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/columbia-university-entrance-exam-quiz/" target="_blank">
+    <span class="tag">Quiz · Education</span>
+    <span class="article-title">Columbia University Entrance Exam Quiz</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/would-you-rather-halloween-poll/" target="_blank">
+    <span class="tag">Poll · Seasonal</span>
+    <span class="article-title">Would You Rather: Halloween Edition</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/apocalypse-survivor-personality-quiz/" target="_blank">
+    <span class="tag">Personality · Trending</span>
+    <span class="article-title">What Kind of Apocalypse Survivor Are You?</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/guess-the-country-from-picture-quiz/" target="_blank">
+    <span class="tag">Quiz · Geography</span>
+    <span class="article-title">Guess the Country From the Picture</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/same-word-different-meanings-quiz/" target="_blank">
+    <span class="tag">Quiz · Language</span>
+    <span class="article-title">Same Word, Different Meanings</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/tricky-words-and-definitions-quiz/" target="_blank">
+    <span class="tag">Quiz · Language</span>
+    <span class="article-title">Tricky Words and Definitions Quiz</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/general-knowledge-quiz-3/" target="_blank">
+    <span class="tag">Quiz · General Knowledge</span>
+    <span class="article-title">General Knowledge Quiz Vol. 3</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/match-answer-to-question-quiz-2/" target="_blank">
+    <span class="tag">Quiz · Trivia</span>
+    <span class="article-title">Match the Answer to the Question</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/2-truths-and-a-lie-quiz-3/" target="_blank">
+    <span class="tag">Quiz · Trivia</span>
+    <span class="article-title">2 Truths and a Lie</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/deal-breakers-poll/" target="_blank">
+    <span class="tag">Poll · Lifestyle</span>
+    <span class="article-title">Deal Breakers Poll</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/would-you-rather-fear-factor-quiz/" target="_blank">
+    <span class="tag">Quiz · Interactive</span>
+    <span class="article-title">Would You Rather: Fear Factor Edition</span>
+    <span class="arrow">↗</span>
+  </a>
+
+  <a class="article-card" href="https://www.boredpanda.com/which-deadly-sin-drives-you-quiz/" target="_blank">
+    <span class="tag">Personality · Psychology</span>
+    <span class="article-title">Which Deadly Sin Drives You?</span>
+    <span class="arrow">↗</span>
+  </a>
+
+</div>
+
+<footer>
+  <p>© 2025 Ikhona Makaluza · Cape Town, South Africa</p>
+  <a href="https://www.boredpanda.com" target="_blank">View on Bored Panda</a>
+</footer>
